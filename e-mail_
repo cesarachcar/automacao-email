@@ -31,7 +31,7 @@ def enviar_email(indice, nome, email):
     msg.attach(MIMEText(corpo_email, 'html'))
 
     #anexar arquivos
-    caminho_anexo = r'C:\Users\cesar\Desktop\Codigos\Integracao_e-mail\anexos'
+    caminho_anexo = r'C:\Users\Desktop\Codigos\Integracao_e-mail\anexos'
     anexo = f'dashboard_{normalizar_nome(nome)}.pdf'
     caminho_arquivo = os.path.join(caminho_anexo, anexo)
     with open(caminho_arquivo, 'rb') as arquivo:
@@ -46,7 +46,7 @@ def enviar_email(indice, nome, email):
     servidor.quit()
     print(f'({indice})Email enviado')
 
-df_email_clientes = pd.read_excel(r'C:\Users\cesar\Desktop\Codigos\Integracao_e-mail\email_clientes.xlsx')
+df_email_clientes = pd.read_excel(r'C:\Users\Codigos\Integracao_e-mail\email_clientes.xlsx')
 
 for _, linha in df_email_clientes.iterrows():
     indice = linha['ID']
